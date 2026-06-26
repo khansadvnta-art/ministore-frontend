@@ -1,274 +1,324 @@
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
+
+const PRODUCTS = [
+  {
+    id: 1,
+    title: "Vintage Oversized Sweatshirt",
+    category: "Streetwear",
+    price: "Rp 185k",
+    tag: "9/10 Condition",
+    tagClass: "bg-vibrant-purple text-white",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCzjOKIfEu6awAJ4a1gL4J2H-32eAaqRw5LYv2QSDFw39Hg-1sA_ysnhNOk2kYNZC_o0fRRkXUHjxC8J0VopYzvIwNS-8IU7pNBdJhN5UeK2TsK2aNl3EsbWymMnhK7413ZgNej85u43fLD3pkm5llOCL_jfqX1VBCMYLSPtIRo_B-0VeaIviH2T92GGXD_DDBFOC1JP54EhUGbAoyn1eBetrDa27Fey7s-VMLWwHtFdB0KNt3J4irbHJYIiTt8xq7OgezmrZFY5gU",
+  },
+  {
+    id: 2,
+    title: "Levi's 501 Classic Wash",
+    category: "Denim",
+    price: "Rp 320k",
+    tag: "Rare Find",
+    tagClass: "bg-caution-yellow text-on-background",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV_II-39J0NNxXHDXqzVkxHGZEVYG0XeH2dqtfrVi0WYH7vpQ_HWxSCrmsolikjwtJEZpzggkKCZE2skarIWwsPo6hkbiXMX9KepDknd3Ig7b3XOEPEsT2XmPGipyyvKolWkEq-kvgY4SnFvGR8zXQkaprzFPf_QBAoJXsmJTD4pY8O5st-_EMXSC7PJ-ei23I912P6Hn0MIk5Q8XgNYU176CRiIXYtWf_A6KQuI-uJ2DpGjMEEZU9miZpkvJsy7wOYqSbeMYCWBk",
+  },
+  {
+    id: 3,
+    title: "70s Psychedelic Shirt",
+    category: "Vintage",
+    price: "Rp 145k",
+    tag: "8.5/10 Cond.",
+    tagClass: "bg-vibrant-purple text-white",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD3HLnjCbJoZPmxktSYxxKtCphTP-j0bsVzKBDRsOArSeYToAThrk0i1BFxsMEE_v8qSJfJe0jIE_KFjSPsBwzOeUzESQlYnr7caGwqh8ZMTfQbqvnDP7tW_zmV4imw0Vfv_rtUkYVQqciFBHwOL_AnzdBNqZ3oGN--y63b9FcacVtb5wBLsnomwcGvjpyGPZYzJyyc8zhBj_qmnyFhrLxa3DzptU4liT3SVMlxudKnNs0lxVWCeVyEbDZ8ce25CjmY3tFp0-yF1SI",
+  },
+  {
+    id: 4,
+    title: "Cognac Leather Bag",
+    category: "Accessories",
+    price: "Rp 450k",
+    tag: "High Value",
+    tagClass: "bg-secondary-fixed text-on-secondary-fixed",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBLN7welmU9wxVuUW6mKlcObUsFseLSV674cawdtRugnWkznoeE1g4TVTZGgmW0CkVjIQ2fB3DSwdaAMCvtS6_BZn3GcsxsJYwECYe000MHJeOGd4sn-_nIypkaglC2vA-wyzSBOxQqD7cOMzvBdNNso10dOQpTaREhLDqv4PSphmYlxpzqDqPMfV6w7d6YUXuxkKmKS6TX-rxvbssXGobJJcjNn5fE3zSyA5w7o_qqRifkSdIW9kqyR1g8QUrTtvgO_KBO9vAI0Fo",
+  }
+];
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Handle header shadow toggle on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) return;
+    alert(`Terima kasih sudah subscribe, Bestie! Info drop barang rare akan dikirim ke: ${email}`);
+    setEmail('');
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    alert(`Mencari: "${searchQuery}"...`);
+  };
 
   return (
-    <>
-  {/* Include this script tag or install `@tailwindplus/elements` via npm: */}
-  {/*  */}
-  <div className="bg-white">
-    <header className="absolute inset-x-0 top-0 z-50">
-      <nav
-        aria-label="Global"
-        className="flex items-center justify-between p-6 lg:px-8"
-      >
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-              className="h-8 w-auto"
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            command="show-modal"
-            commandfor="mobile-menu"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              data-slot="icon"
-              aria-hidden="true"
-              className="size-6"
-            >
-              <path
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+    <div className="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen">
+      {/* TopNavBar Shared Component Implementation */}
+      <header className={`w-full top-0 sticky z-50 bg-surface-bright dark:bg-on-background backdrop-blur-md border-b-2 border-sky-tint dark:border-on-surface-variant h-20 transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+        <div className="flex justify-between items-center px-container-margin py-base max-w-7xl mx-auto h-full">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10">
+              <svg className="w-full h-full" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38.89,7.69h-13.79l.8,7.11,6.68,3.06,6.31-10.18Z" fill="#fdda5c"></path>
+                <path d="M13,32.95l3.35-8.71-3.35-9.12-7.82,11.9c-.34,.52-.18,1.21,.36,1.53l7.47,4.4Z" fill="#fce87b"></path>
+                <path d="M13,15.11l-3.64,15.69,3.64,2.15,2.74-7.13-2.74-10.7Z" fill="#fdda5c"></path>
+                <path d="M51,15.11l-4.75,10.5,4.75,7.33,7.47-4.4c.53-.31,.7-1.01,.36-1.53l-7.82-11.9Z" fill="#fce87b"></path>
+                <path d="M51,15.11l3.64,15.69-3.64,2.15-2.74-7.13,2.74-10.7Z" fill="#fdda5c"></path>
+                <path d="M14.14,13.6c-.63,0-1.14,.51-1.14,1.14V55.42c0,.63,.51,1.14,1.14,1.14H49.86c.63,0,1.14-.51,1.14-1.14V14.74c0-.63-.51-1.14-1.14-1.14h-6.16l-11.7,.43-11.7-.43h-6.16Z" fill="#62d9fa"></path>
+                <path d="M32,14.03l2.9,5.91c.22,.45,.81,.57,1.2,.24l7.6-6.59-2.85-4.8-.54-.9c-.3-.5-.99-.61-1.42-.21l-6.89,6.34Z" fill="#fce87b"></path>
+                <path d="M24.42,7.45c-.29,.02-.57,.18-.73,.45l-.54,.9-2.85,4.8,7.6,6.59c.38,.33,.97,.21,1.2-.24l2.9-5.91-6.89-6.34c-.16-.15-.36-.23-.56-.24-.04,0-.08,0-.12,0Z" fill="#fce87b"></path>
+              </svg>
+            </div>
+            <div className="font-display-lg text-display-lg font-extrabold text-vibrant-purple dark:text-pastel-lavender leading-none">ThriftVibe</div>
+          </div>
+          <nav className="hidden md:flex gap-gutter font-body-md text-body-md items-center">
+            <a className="text-primary dark:text-primary-fixed font-bold border-b-2 border-vibrant-purple hover:text-vibrant-purple transition-colors duration-200" href="#">Home</a>
+            <a className="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-purple transition-colors duration-200" href="#">Catalog</a>
+            <a className="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-purple transition-colors duration-200" href="#">Eco Mission</a>
+            <a className="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-purple transition-colors duration-200" href="#">Trending</a>
+          </nav>
+          <div className="flex items-center gap-gutter">
+            <form onSubmit={handleSearchSubmit} className="hidden lg:flex items-center bg-surface-container rounded-lg px-base py-1">
+              <span className="material-symbols-outlined text-outline">search</span>
+              <input
+                className="bg-transparent border-none focus:ring-0 text-sm w-40 placeholder-outline focus:outline-none"
+                placeholder="Cari harta karunmu..."
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
-            </svg>
-          </button>
+            </form>
+            <button className="text-primary dark:text-primary-fixed font-bold hover:text-vibrant-purple transition-colors duration-200 active:scale-95">Sign In</button>
+            <button className="p-2 hover:bg-primary-container/10 rounded-full transition-colors active:scale-95" onClick={() => alert('Keranjang belanjaanmu masih kosong, Bestie!')}>
+              <span className="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+            </button>
+          </div>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Product
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Company
-          </a>
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Log in <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </nav>
-      <el-dialog>
-        <dialog id="mobile-menu" className="backdrop:bg-transparent lg:hidden">
-          <div tabIndex={0} className="fixed inset-0 focus:outline-none">
-            <el-dialog-panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Your Company</span>
-                  <img
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                    alt=""
-                    className="h-8 w-auto"
-                  />
-                </a>
-                <button
-                  type="button"
-                  command="close"
-                  commandfor="mobile-menu"
-                  className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                >
-                  <span className="sr-only">Close menu</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    data-slot="icon"
-                    aria-hidden="true"
-                    className="size-6"
-                  >
-                    <path
-                      d="M6 18 18 6M6 6l12 12"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-surface-container-low px-container-margin py-stack-lg lg:py-[100px]">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+            <div className="z-10">
+              <span className="inline-block px-base py-1 bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md rounded-full mb-stack-sm">#ThriftVibeOnly</span>
+              <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-stack-sm leading-tight">
+                Keren Maksimal, <br /><span className="text-primary">Sayang Lingkungan.</span>
+              </h1>
+              <p className="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-lg">
+                Gak perlu boncos buat tampil stand-out. Temukan outfit vintage unik yang bikin gaya kamu makin berkarakter sambil bantu bumi tetap hijau.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-gutter">
+                <button className="bg-primary text-on-primary px-stack-md py-base rounded-lg font-label-md text-label-md flex items-center justify-center gap-base hover:bg-on-primary-fixed-variant transition-colors active:scale-95 shadow-sm">
+                  Mulai Thrifting, Bestie!
+                  <span className="material-symbols-outlined">trending_flat</span>
+                </button>
+                <button className="bg-secondary-fixed text-on-secondary-fixed px-stack-md py-base rounded-lg font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+                  Cek Katalog
                 </button>
               </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-2 py-6">
-                    <a
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      Product
-                    </a>
-                    <a
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      Features
-                    </a>
-                    <a
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      Marketplace
-                    </a>
-                    <a
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      Company
-                    </a>
+            </div>
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-gutter">
+                <div className="space-y-gutter pt-stack-md">
+                  <div className="rounded-xl overflow-hidden aspect-[3/4] relative shadow-lg">
+                    <img className="w-full h-full object-cover" alt="Streetwear photography of a stylish person in a vintage windbreaker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoG--4dEnZ4-icqEX8QPQJfuQ0HdyCPIeL-L1lQg0xG5MfyqaNj8tLpxHNNXnWGFIKVIjgapE0I7nTSzxw4UrUWLS8mgT-Tc4TF4C3ZBMAT8txi-rvJrhrx6TytLQb7g5R65YtAGwUOySxCO78i9Vv5UuGnGXVjYWWrqsTyS277nSEk3O4OdiVVLoMesaVaNZwFrrD-41k4mtxPeFhMvx0hq1UOmdULBm5sQhJDFkPZvV7fzZqHzV66wSd1UBdxIwLlk1FpcgKKfk" />
                   </div>
-                  <div className="py-6">
-                    <a
-                      href="#"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                    >
-                      Log in
-                    </a>
+                  <div className="rounded-xl overflow-hidden aspect-square bg-pastel-lavender p-base flex items-end shadow-lg">
+                    <span className="font-display-lg text-headline-md text-primary">VINTAGE<br />FINDS</span>
+                  </div>
+                </div>
+                <div className="space-y-gutter">
+                  <div className="rounded-xl overflow-hidden aspect-square shadow-lg">
+                    <img className="w-full h-full object-cover" alt="Close-up of hand-picked accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACb5zIMUTUFJWQJVlYlSUJBm0Dlo-pLOFyLDw8KyMwaDGBWpZF6xZLweK7N1GyD44cjflFJAAYw1mTmyY7naIgirJeU7yIDTndNozbLJQQhyzMS_8OgnY3UOz3daCqzdA9_m8kCQSE519jNqhm86y9VqK6SO97ttcHugc7v6owxLLt8bt8_fKVp-0kOBu9Soxj41ZIHBV4GIo4q8JZNZ_R6z-EXgwJtft_PDz4z20A23akrejW-tChHF8SBWvaBkNt7Fhtn_j2jfI" />
+                  </div>
+                  <div className="rounded-xl overflow-hidden aspect-[3/4] relative shadow-lg">
+                    <img className="w-full h-full object-cover" alt="Stylish gen-z individual in thrifted denim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIYYSMOf00spqVEyHJGfxpd5jt28qIljASQRh95wkH1F8z8IP4a5kExUXK8iEqtujhu-QUToalQpAXgHoGpy4snstoDWKvY42SG65RJn67PmrBFiqdP1HtlBRfk6DsF3Ywpn1CS3BnqB5wKAKmDYRKzMR1WswerK72RY2SGACgTM0MeExtKMGcsJCfdm96H2B1p5c3jcxWrC8m4Eipqu8d0HtmbVWnZ0MwzW6XT5XvB3aKHPCdPNlTm8Q5Q5Lyf7DQ2a8esK89oT8" />
                   </div>
                 </div>
               </div>
-            </el-dialog-panel>
+            </div>
           </div>
-        </dialog>
-      </el-dialog>
-    </header>
-    <div className="relative isolate px-6 pt-14 lg:px-8">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-          }}
-          className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
-        />
-      </div>
-      <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-        <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-          <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            Announcing our next round of funding.{" "}
-            <a href="#" className="font-semibold text-indigo-600">
-              <span aria-hidden="true" className="absolute inset-0" />
-              Read more <span aria-hidden="true">→</span>
-            </a>
+        </section>
+
+        {/* Trending Section */}
+        <section className="py-stack-lg px-container-margin max-w-7xl mx-auto">
+          <div className="flex justify-between items-end mb-stack-md">
+            <div>
+              <h2 className="font-headline-lg text-headline-lg text-on-surface mb-base">Lagi Trending Pekan Ini</h2>
+              <p className="font-body-md text-body-md text-on-surface-variant">Harta karun pilihan yang lagi banyak dicari bestie-bestie lainnya.</p>
+            </div>
+            <button className="hidden md:flex items-center gap-base font-label-md text-label-md text-primary hover:text-vibrant-purple transition-colors">
+              Lihat Semua <span className="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+            {PRODUCTS.map(product => (
+              <div key={product.id} className="bg-surface-container-lowest rounded-lg group flex flex-col h-full border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative overflow-hidden aspect-[4/5] rounded-t-lg">
+                  <img alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={product.image} />
+                  <div className={`absolute top-base left-base font-label-md text-[10px] px-2 py-1 rounded-full ${product.tagClass}`}>
+                    {product.tag}
+                  </div>
+                </div>
+                <div className="p-stack-sm flex flex-col flex-grow">
+                  <span className="text-[12px] font-label-md text-outline uppercase mb-base">{product.category}</span>
+                  <h3 className="font-headline-md text-body-lg text-on-surface line-clamp-1 mb-base">{product.title}</h3>
+                  <div className="mt-auto flex justify-between items-center">
+                    <span className="font-headline-md text-headline-md text-primary">{product.price}</span>
+                    <span className="material-symbols-outlined text-secondary text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Eco-Mission Section */}
+        <section className="bg-on-surface text-surface py-stack-lg">
+          <div className="max-w-7xl mx-auto px-container-margin">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+              <div className="order-2 lg:order-1">
+                <div className="bg-surface-container-low text-on-surface p-stack-md rounded-xl relative">
+                  <div className="absolute -top-6 -right-6 w-14 h-14 bg-caution-yellow text-on-background flex items-center justify-center rounded-full font-black text-lg border-2 border-on-surface rotate-12">100%</div>
+                  <h2 className="font-display-lg text-headline-md mb-stack-md text-primary">Belanja Pintar, <span className="text-secondary">Bumi Senang.</span></h2>
+                  <div className="space-y-gutter">
+                    <div className="flex gap-gutter">
+                      <div className="flex-shrink-0 w-12 h-12 bg-pastel-lavender text-primary flex items-center justify-center rounded-lg">
+                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>wallet</span>
+                      </div>
+                      <div>
+                        <h4 className="font-headline-md text-headline-md mb-1 text-on-surface">Hemat Dompet</h4>
+                        <p className="font-body-md text-body-md text-on-surface-variant">Gak perlu bayar mahal buat brand ternama. Dapatkan kualitas premium dengan harga miring.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-gutter">
+                      <div className="flex-shrink-0 w-12 h-12 bg-eco-mint text-tertiary flex items-center justify-center rounded-lg">
+                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+                      </div>
+                      <div>
+                        <h4 className="font-headline-md text-headline-md mb-1 text-on-surface">Kurangi Limbah</h4>
+                        <p className="font-body-md text-body-md text-on-surface-variant">Setiap item yang kamu beli adalah satu pakaian yang terselamatkan dari tempat pembuangan akhir.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-gutter">
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary-fixed text-on-primary-fixed flex items-center justify-center rounded-lg">
+                        <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>style</span>
+                      </div>
+                      <div>
+                        <h4 className="font-headline-md text-headline-md mb-1 text-on-surface">Satu-Satunya</h4>
+                        <p className="font-body-md text-body-md text-on-surface-variant">Gak ada lagi ceritanya kembaran baju di mall. Gaya kamu bakal bener-bener otentik.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 space-y-stack-sm">
+                <h3 className="font-display-lg text-headline-lg-mobile md:text-display-lg leading-tight">Fashion Lambat,<br /><span className="text-secondary-fixed-dim underline underline-offset-8">Dampak Cepat.</span></h3>
+                <p className="font-body-lg text-body-lg text-surface-dim">Kami percaya bahwa gaya yang keren tidak harus merusak alam. Di ThriftVibe, kami mengkurasi setiap potong pakaian untuk memastikan kamu mendapatkan yang terbaik dari segi gaya dan keberlanjutan.</p>
+                <div className="pt-stack-sm">
+                  <button className="font-label-md text-label-md px-stack-md py-base bg-secondary-fixed text-on-secondary-fixed rounded-lg hover:scale-105 transition-transform active:scale-95">Pelajari Visi Kami</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter CTA */}
+        <section className="py-stack-lg px-container-margin">
+          <div className="max-w-4xl mx-auto bg-primary-container p-stack-md md:p-stack-lg rounded-xl text-center text-on-primary-container relative overflow-hidden">
+            <h2 className="font-display-lg text-headline-lg mb-base relative z-10 text-on-primary">Mau Info Drop Barang Baru?</h2>
+            <p className="font-body-lg text-body-lg mb-stack-md opacity-90 max-w-lg mx-auto relative z-10 text-on-primary">Daftar newsletter biar gak ketinggalan barang rare yang cuma ada satu di dunia.</p>
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-gutter max-w-md mx-auto relative z-10">
+              <input
+                className="flex-grow rounded-lg border-none px-stack-md py-base text-on-surface focus:ring-2 focus:ring-vibrant-purple focus:outline-none placeholder-gray-400 bg-white animate-none"
+                placeholder="Email kamu di sini..."
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button type="submit" className="bg-caution-yellow text-on-background px-stack-md py-base font-label-md text-label-md rounded-lg whitespace-nowrap hover:bg-yellow-400 transition-colors active:scale-95">Join Bestie!</button>
+            </form>
+            <p className="mt-base text-xs opacity-75 relative z-10 text-on-primary">Tenang, kita gak bakal spam kok. Janji bestie!</p>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer Shared Component Implementation */}
+      <footer className="w-full mt-stack-lg bg-surface-container-low dark:bg-surface-container-highest">
+        <div className="max-w-7xl mx-auto px-container-margin py-stack-md">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-md">
+            <div className="space-y-base">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8">
+                  <svg className="w-full h-full" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38.89,7.69h-13.79l.8,7.11,6.68,3.06,6.31-10.18Z" fill="#fdda5c"></path>
+                    <path d="M13,32.95l3.35-8.71-3.35-9.12-7.82,11.9c-.34,.52-.18,1.21,.36,1.53l7.47,4.4Z" fill="#fce87b"></path>
+                    <path d="M14.14,13.6c-.63,0-1.14,.51-1.14,1.14V55.42c0,.63,.51,1.14,1.14,1.14H49.86c.63,0,1.14-.51,1.14-1.14V14.74c0-.63-.51-1.14-1.14-1.14h-6.16l-11.7,.43-11.7-.43h-6.16Z" fill="#62d9fa"></path>
+                  </svg>
+                </div>
+                <div className="font-headline-md text-headline-md text-vibrant-purple">ThriftVibe</div>
+              </div>
+              <p className="font-label-md text-label-md text-on-surface-variant max-w-xs">Destinasi thrifting online nomor satu buat anak muda yang melek gaya dan peduli lingkungan.</p>
+            </div>
+            <div>
+              <h4 className="font-label-md text-label-md text-primary mb-base uppercase tracking-wider">Quick Links</h4>
+              <ul className="space-y-base font-label-md text-label-md text-on-surface-variant">
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Catalog</a></li>
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Eco Mission</a></li>
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Trending</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-label-md text-label-md text-primary mb-base uppercase tracking-wider">Support</h4>
+              <ul className="space-y-base font-label-md text-label-md text-on-surface-variant">
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Shipping FAQ</a></li>
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Returns Policy</a></li>
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Contact Bestie</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-label-md text-label-md text-primary mb-base uppercase tracking-wider">Legal</h4>
+              <ul className="space-y-base font-label-md text-label-md text-on-surface-variant">
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Privacy Policy</a></li>
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Terms of Service</a></li>
+                <li><a className="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Sustainability Report</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="bg-sky-tint dark:bg-on-surface-variant h-[2px] w-full mb-stack-md"></div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-gutter font-label-md text-label-md text-on-surface-variant">
+            <div>© 2024 ThriftVibe. All rights reserved.</div>
+            <div className="flex gap-stack-md">
+              <a className="hover:text-vibrant-purple cursor-pointer transition-colors">Instagram</a>
+              <a className="hover:text-vibrant-purple cursor-pointer transition-colors">TikTok</a>
+              <a className="hover:text-vibrant-purple cursor-pointer transition-colors">Twitter</a>
+            </div>
           </div>
         </div>
-        <div className="text-center">
-          <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-            Data to enrich your online business
-          </h1>
-          <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Get started
-            </a>
-            <a href="#" className="text-sm/6 font-semibold text-gray-900">
-              Learn more <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-          }}
-          className="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
-        />
-      </div>
+      </footer>
     </div>
-  </div>
-
-
-      <div className="bg-white">
-  <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-    <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-      <svg
-        viewBox="0 0 1024 1024"
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
-      >
-        <circle
-          r={512}
-          cx={512}
-          cy={512}
-          fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-          fillOpacity="0.7"
-        />
-        <defs>
-          <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-            <stop stopColor="#7775D6" />
-            <stop offset={1} stopColor="#E935C1" />
-          </radialGradient>
-        </defs>
-      </svg>
-      <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-        <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl">
-          Boost your productivity. Start using our app today.
-        </h2>
-        <p className="mt-6 text-lg/8 text-pretty text-gray-300">
-          Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
-          Malesuada adipiscing sagittis vel nulla.
-        </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-          <a
-            href="#"
-            className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            {" "}
-            Get started{" "}
-          </a>
-          <a
-            href="#"
-            className="text-sm/6 font-semibold text-white hover:text-gray-100"
-          >
-            Learn more
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-      <div className="relative mt-16 h-80 lg:mt-8">
-        <img
-          width={1824}
-          height={1080}
-          src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-          alt="App screenshot"
-          className="absolute top-0 left-0 w-228 max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
-    </>
-  )
+  );
 }
 
-export default App
+export default App;

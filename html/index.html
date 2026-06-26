@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ThriftVibe | Keren Maksimal, Sayang Lingkungan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f4fafd",
+                        "surface-dim": "#d4dbdd",
+                        "inverse-on-surface": "#ebf2f4",
+                        "on-background": "#161d1f",
+                        "on-tertiary-fixed-variant": "#314d3c",
+                        "surface": "#f4fafd",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#cee7e9",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "vibrant-purple": "#A29BFE",
+                        "tertiary-fixed": "#caead3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#362d8a",
+                        "surface-container": "#e8eff1",
+                        "on-primary-fixed": "#140067",
+                        "outline": "#787583",
+                        "tertiary-fixed-dim": "#aeceb8",
+                        "secondary-fixed-dim": "#b2cbcd",
+                        "surface-container-low": "#eef5f7",
+                        "secondary-container": "#cbe4e7",
+                        "pastel-lavender": "#C7C2FE",
+                        "eco-mint": "#DAFBE3",
+                        "surface-container-highest": "#dde4e6",
+                        "outline-variant": "#c8c4d3",
+                        "on-surface": "#161d1f",
+                        "primary": "#5952af",
+                        "on-primary-fixed-variant": "#413996",
+                        "on-tertiary-fixed": "#042012",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#4f6769",
+                        "on-tertiary-container": "#264231",
+                        "surface-container-high": "#e2e9ec",
+                        "on-surface-variant": "#474552",
+                        "tertiary-container": "#8fae99",
+                        "on-secondary-fixed": "#061f21",
+                        "secondary": "#4b6364",
+                        "inverse-primary": "#c5c0ff",
+                        "on-secondary-fixed-variant": "#334b4d",
+                        "surface-tint": "#5952af",
+                        "primary-fixed": "#e3dfff",
+                        "caution-yellow": "#FCE87B",
+                        "background": "#f4fafd",
+                        "on-error": "#ffffff",
+                        "primary-container": "#a29bfe",
+                        "surface-variant": "#dde4e6",
+                        "inverse-surface": "#2b3234",
+                        "tertiary": "#486552",
+                        "primary-fixed-dim": "#c5c0ff",
+                        "sky-tint": "#DFF9FB"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "gutter": "16px",
+                        "stack-sm": "12px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Shared Component Implementation -->
+<header class="w-full top-0 sticky z-50 bg-surface-bright dark:bg-on-background backdrop-blur-md border-b-2 border-sky-tint dark:border-on-surface-variant h-20 transition-transform duration-300">
+<div class="flex justify-between items-center px-container-margin py-base max-w-7xl mx-auto h-full">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10">
+<svg class="w-full h-full" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M38.89,7.69h-13.79l.8,7.11,6.68,3.06,6.31-10.18Z" fill="#fdda5c"></path>
+<path d="M13,32.95l3.35-8.71-3.35-9.12-7.82,11.9c-.34,.52-.18,1.21,.36,1.53l7.47,4.4Z" fill="#fce87b"></path>
+<path d="M13,15.11l-3.64,15.69,3.64,2.15,2.74-7.13-2.74-10.7Z" fill="#fdda5c"></path>
+<path d="M51,15.11l-4.75,10.5,4.75,7.33,7.47-4.4c.53-.31,.7-1.01,.36-1.53l-7.82-11.9Z" fill="#fce87b"></path>
+<path d="M51,15.11l3.64,15.69-3.64,2.15-2.74-7.13,2.74-10.7Z" fill="#fdda5c"></path>
+<path d="M14.14,13.6c-.63,0-1.14,.51-1.14,1.14V55.42c0,.63,.51,1.14,1.14,1.14H49.86c.63,0,1.14-.51,1.14-1.14V14.74c0-.63-.51-1.14-1.14-1.14h-6.16l-11.7,.43-11.7-.43h-6.16Z" fill="#62d9fa"></path>
+<path d="M32,14.03l2.9,5.91c.22,.45,.81,.57,1.2,.24l7.6-6.59-2.85-4.8-.54-.9c-.3-.5-.99-.61-1.42-.21l-6.89,6.34Z" fill="#fce87b"></path>
+<path d="M24.42,7.45c-.29,.02-.57,.18-.73,.45l-.54,.9-2.85,4.8,7.6,6.59c.38,.33,.97,.21,1.2-.24l2.9-5.91-6.89-6.34c-.16-.15-.36-.23-.56-.24-.04,0-.08,0-.12,0Z" fill="#fce87b"></path>
+</svg>
+</div>
+<div class="font-display-lg text-display-lg font-extrabold text-vibrant-purple dark:text-pastel-lavender leading-none">ThriftVibe</div>
+</div>
+<nav class="hidden md:flex gap-gutter font-body-md text-body-md items-center">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-vibrant-purple hover:text-vibrant-purple transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-purple transition-colors duration-200" href="#">Catalog</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-purple transition-colors duration-200" href="#">Eco Mission</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-purple transition-colors duration-200" href="#">Trending</a>
+</nav>
+<div class="flex items-center gap-gutter">
+<div class="hidden lg:flex items-center bg-surface-container rounded-lg px-base py-1">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-40" placeholder="Cari harta karunmu..." type="text"/>
+</div>
+<button class="text-primary dark:text-primary-fixed font-bold hover:text-vibrant-purple transition-colors duration-200 active:scale-95">Sign In</button>
+<button class="p-2 hover:bg-primary-container/10 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-low px-container-margin py-stack-lg lg:py-[100px]">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center">
+<div class="z-10">
+<span class="inline-block px-base py-1 bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md rounded-full mb-stack-sm">#ThriftVibeOnly</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-stack-sm leading-tight">
+                    Keren Maksimal, <br/><span class="text-primary">Sayang Lingkungan.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md max-w-lg">
+                    Gak perlu boncos buat tampil stand-out. Temukan outfit vintage unik yang bikin gaya kamu makin berkarakter sambil bantu bumi tetap hijau.
+                </p>
+<div class="flex flex-col sm:flex-row gap-gutter">
+<button class="bg-primary text-on-primary px-stack-md py-base rounded-lg font-label-md text-label-md flex items-center justify-center gap-base hover:bg-on-primary-fixed-variant transition-colors active:scale-95 shadow-sm">
+                        Mulai Thrifting, Bestie!
+                        <span class="material-symbols-outlined">trending_flat</span>
+</button>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-stack-md py-base rounded-lg font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+                        Cek Katalog
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-gutter pt-stack-md">
+<div class="rounded-xl overflow-hidden aspect-[3/4] relative shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Streetwear photography of a stylish person in a vintage windbreaker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoG--4dEnZ4-icqEX8QPQJfuQ0HdyCPIeL-L1lQg0xG5MfyqaNj8tLpxHNNXnWGFIKVIjgapE0I7nTSzxw4UrUWLS8mgT-Tc4TF4C3ZBMAT8txi-rvJrhrx6TytLQb7g5R65YtAGwUOySxCO78i9Vv5UuGnGXVjYWWrqsTyS277nSEk3O4OdiVVLoMesaVaNZwFrrD-41k4mtxPeFhMvx0hq1UOmdULBm5sQhJDFkPZvV7fzZqHzV66wSd1UBdxIwLlk1FpcgKKfk"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-square bg-pastel-lavender p-base flex items-end shadow-lg">
+<span class="font-display-lg text-headline-md text-primary">VINTAGE<br/>FINDS</span>
+</div>
+</div>
+<div class="space-y-gutter">
+<div class="rounded-xl overflow-hidden aspect-square shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Close-up of hand-picked accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACb5zIMUTUFJWQJVlYlSUJBm0Dlo-pLOFyLDw8KyMwaDGBWpZF6xZLweK7N1GyD44cjflFJAAYw1mTmyY7naIgirJeU7yIDTndNozbLJQQhyzMS_8OgnY3UOz3daCqzdA9_m8kCQSE519jNqhm86y9VqK6SO97ttcHugc7v6owxLLt8bt8_fKVp-0kOBu9Soxj41ZIHBV4GIo4q8JZNZ_R6z-EXgwJtft_PDz4z20A23akrejW-tChHF8SBWvaBkNt7Fhtn_j2jfI"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[3/4] relative shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Stylish gen-z individual in thrifted denim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIYYSMOf00spqVEyHJGfxpd5jt28qIljASQRh95wkH1F8z8IP4a5kExUXK8iEqtujhu-QUToalQpAXgHoGpy4snstoDWKvY42SG65RJn67PmrBFiqdP1HtlBRfk6DsF3Ywpn1CS3BnqB5wKAKmDYRKzMR1WswerK72RY2SGACgTM0MeExtKMGcsJCfdm96H2B1p5c3jcxWrC8m4Eipqu8d0HtmbVWnZ0MwzW6XT5XvB3aKHPCdPNlTm8Q5Q5Lyf7DQ2a8esK89oT8"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Section -->
+<section class="py-stack-lg px-container-margin max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-base">Lagi Trending Pekan Ini</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Harta karun pilihan yang lagi banyak dicari bestie-bestie lainnya.</p>
+</div>
+<button class="hidden md:flex items-center gap-base font-label-md text-label-md text-primary hover:text-vibrant-purple transition-colors">
+                Lihat Semua <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg group flex flex-col h-full border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="relative overflow-hidden aspect-[4/5] rounded-t-lg">
+<img alt="Sweatshirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzjOKIfEu6awAJ4a1gL4J2H-32eAaqRw5LYv2QSDFw39Hg-1sA_ysnhNOk2kYNZC_o0fRRkXUHjxC8J0VopYzvIwNS-8IU7pNBdJhN5UeK2TsK2aNl3EsbWymMnhK7413ZgNej85u43fLD3pkm5llOCL_jfqX1VBCMYLSPtIRo_B-0VeaIviH2T92GGXD_DDBFOC1JP54EhUGbAoyn1eBetrDa27Fey7s-VMLWwHtFdB0KNt3J4irbHJYIiTt8xq7OgezmrZFY5gU"/>
+<div class="absolute top-base left-base bg-vibrant-purple text-white font-label-md text-[10px] px-2 py-1 rounded-full">9/10 Condition</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<span class="text-[12px] font-label-md text-outline uppercase mb-base">Streetwear</span>
+<h3 class="font-headline-md text-body-lg text-on-surface line-clamp-1 mb-base">Vintage Oversized Sweatshirt</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-primary">Rp 185k</span>
+<span class="material-symbols-outlined text-secondary text-lg">eco</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg group flex flex-col h-full border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="relative overflow-hidden aspect-[4/5] rounded-t-lg">
+<img alt="Denim" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV_II-39J0NNxXHDXqzVkxHGZEVYG0XeH2dqtfrVi0WYH7vpQ_HWxSCrmsolikjwtJEZpzggkKCZE2skarIWwsPo6hkbiXMX9KepDknd3Ig7b3XOEPEsT2XmPGipyyvKolWkEq-kvgY4SnFvGR8zXQkaprzFPf_QBAoJXsmJTD4pY8O5st-_EMXSC7PJ-ei23I912P6Hn0MIk5Q8XgNYU176CRiIXYtWf_A6KQuI-uJ2DpGjMEEZU9miZpkvJsy7wOYqSbeMYCWBk"/>
+<div class="absolute top-base left-base bg-caution-yellow text-on-background font-label-md text-[10px] px-2 py-1 rounded-full">Rare Find</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<span class="text-[12px] font-label-md text-outline uppercase mb-base">Denim</span>
+<h3 class="font-headline-md text-body-lg text-on-surface line-clamp-1 mb-base">Levi's 501 Classic Wash</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-primary">Rp 320k</span>
+<span class="material-symbols-outlined text-secondary text-lg">eco</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg group flex flex-col h-full border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="relative overflow-hidden aspect-[4/5] rounded-t-lg">
+<img alt="Shirt" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3HLnjCbJoZPmxktSYxxKtCphTP-j0bsVzKBDRsOArSeYToAThrk0i1BFxsMEE_v8qSJfJe0jIE_KFjSPsBwzOeUzESQlYnr7caGwqh8ZMTfQbqvnDP7tW_zmV4imw0Vfv_rtUkYVQqciFBHwOL_AnzdBNqZ3oGN--y63b9FcacVtb5wBLsnomwcGvjpyGPZYzJyyc8zhBj_qmnyFhrLxa3DzptU4liT3SVMlxudKnNs0lxVWCeVyEbDZ8ce25CjmY3tFp0-yF1SI"/>
+<div class="absolute top-base left-base bg-vibrant-purple text-white font-label-md text-[10px] px-2 py-1 rounded-full">8.5/10 Cond.</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<span class="text-[12px] font-label-md text-outline uppercase mb-base">Vintage</span>
+<h3 class="font-headline-md text-body-lg text-on-surface line-clamp-1 mb-base">70s Psychedelic Shirt</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-primary">Rp 145k</span>
+<span class="material-symbols-outlined text-secondary text-lg">eco</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-lg group flex flex-col h-full border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="relative overflow-hidden aspect-[4/5] rounded-t-lg">
+<img alt="Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLN7welmU9wxVuUW6mKlcObUsFseLSV674cawdtRugnWkznoeE1g4TVTZGgmW0CkVjIQ2fB3DSwdaAMCvtS6_BZn3GcsxsJYwECYe000MHJeOGd4sn-_nIypkaglC2vA-wyzSBOxQqD7cOMzvBdNNso10dOQpTaREhLDqv4PSphmYlxpzqDqPMfV6w7d6YUXuxkKmKS6TX-rxvbssXGobJJcjNn5fE3zSyA5w7o_qqRifkSdIW9kqyR1g8QUrTtvgO_KBO9vAI0Fo"/>
+<div class="absolute top-base left-base bg-secondary-fixed text-on-secondary-fixed font-label-md text-[10px] px-2 py-1 rounded-full">High Value</div>
+</div>
+<div class="p-stack-sm flex flex-col flex-grow">
+<span class="text-[12px] font-label-md text-outline uppercase mb-base">Accessories</span>
+<h3 class="font-headline-md text-body-lg text-on-surface line-clamp-1 mb-base">Cognac Leather Bag</h3>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-primary">Rp 450k</span>
+<span class="material-symbols-outlined text-secondary text-lg">eco</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Eco-Mission Section -->
+<section class="bg-on-surface text-surface py-stack-lg">
+<div class="max-w-7xl mx-auto px-container-margin">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div class="order-2 lg:order-1">
+<div class="bg-surface-container-low text-on-surface p-stack-md rounded-xl relative">
+<div class="absolute -top-6 -right-6 w-14 h-14 bg-caution-yellow text-on-background flex items-center justify-center rounded-full font-black text-lg border-2 border-on-surface rotate-12">100%</div>
+<h2 class="font-display-lg text-headline-md mb-stack-md text-primary">Belanja Pintar, <span class="text-secondary">Bumi Senang.</span></h2>
+<div class="space-y-gutter">
+<div class="flex gap-gutter">
+<div class="flex-shrink-0 w-12 h-12 bg-pastel-lavender text-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wallet</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1 text-on-surface">Hemat Dompet</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Gak perlu bayar mahal buat brand ternama. Dapatkan kualitas premium dengan harga miring.</p>
+</div>
+</div>
+<div class="flex gap-gutter">
+<div class="flex-shrink-0 w-12 h-12 bg-eco-mint text-tertiary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1 text-on-surface">Kurangi Limbah</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Setiap item yang kamu beli adalah satu pakaian yang terselamatkan dari tempat pembuangan akhir.</p>
+</div>
+</div>
+<div class="flex gap-gutter">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-fixed text-on-primary-fixed flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-1 text-on-surface">Satu-Satunya</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Gak ada lagi ceritanya kembaran baju di mall. Gaya kamu bakal bener-bener otentik.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-stack-sm">
+<h3 class="font-display-lg text-headline-lg-mobile md:text-display-lg leading-tight">Fashion Lambat,<br/><span class="text-secondary-fixed-dim underline underline-offset-8">Dampak Cepat.</span></h3>
+<p class="font-body-lg text-body-lg text-surface-dim">Kami percaya bahwa gaya yang keren tidak harus merusak alam. Di ThriftVibe, kami mengkurasi setiap potong pakaian untuk memastikan kamu mendapatkan yang terbaik dari segi gaya dan keberlanjutan.</p>
+<div class="pt-stack-sm">
+<button class="font-label-md text-label-md px-stack-md py-base bg-secondary-fixed text-on-secondary-fixed rounded-lg hover:scale-105 transition-transform active:scale-95">Pelajari Visi Kami</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="py-stack-lg px-container-margin">
+<div class="max-w-4xl mx-auto bg-primary-container p-stack-md md:p-stack-lg rounded-xl text-center text-on-primary-container relative overflow-hidden">
+<h2 class="font-display-lg text-headline-lg mb-base relative z-10 text-on-primary">Mau Info Drop Barang Baru?</h2>
+<p class="font-body-lg text-body-lg mb-stack-md opacity-90 max-w-lg mx-auto relative z-10 text-on-primary">Daftar newsletter biar gak ketinggalan barang rare yang cuma ada satu di dunia.</p>
+<div class="flex flex-col sm:flex-row gap-gutter max-w-md mx-auto relative z-10">
+<input class="flex-grow rounded-lg border-none px-stack-md py-base text-on-surface focus:ring-2 focus:ring-vibrant-purple" placeholder="Email kamu di sini..." type="email"/>
+<button class="bg-caution-yellow text-on-background px-stack-md py-base font-label-md text-label-md rounded-lg whitespace-nowrap hover:bg-yellow-400 transition-colors active:scale-95">Join Bestie!</button>
+</div>
+<p class="mt-base text-xs opacity-75 relative z-10 text-on-primary">Tenang, kita gak bakal spam kok. Janji bestie!</p>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component Implementation -->
+<footer class="w-full mt-stack-lg bg-surface-container-low dark:bg-surface-container-highest">
+<div class="max-w-7xl mx-auto px-container-margin py-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-md">
+<div class="space-y-base">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8">
+<svg class="w-full h-full" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M38.89,7.69h-13.79l.8,7.11,6.68,3.06,6.31-10.18Z" fill="#fdda5c"></path>
+<path d="M13,32.95l3.35-8.71-3.35-9.12-7.82,11.9c-.34,.52-.18,1.21,.36,1.53l7.47,4.4Z" fill="#fce87b"></path>
+<path d="M14.14,13.6c-.63,0-1.14,.51-1.14,1.14V55.42c0,.63,.51,1.14,1.14,1.14H49.86c.63,0,1.14-.51,1.14-1.14V14.74c0-.63-.51-1.14-1.14-1.14h-6.16l-11.7,.43-11.7-.43h-6.16Z" fill="#62d9fa"></path>
+</svg>
+</div>
+<div class="font-headline-md text-headline-md text-vibrant-purple">ThriftVibe</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant max-w-xs">Destinasi thrifting online nomor satu buat anak muda yang melek gaya dan peduli lingkungan.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-base uppercase tracking-wider">Quick Links</h4>
+<ul class="space-y-base font-label-md text-label-md text-on-surface-variant">
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Catalog</a></li>
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Eco Mission</a></li>
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Trending</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-base uppercase tracking-wider">Support</h4>
+<ul class="space-y-base font-label-md text-label-md text-on-surface-variant">
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Shipping FAQ</a></li>
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Returns Policy</a></li>
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Contact Bestie</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-base uppercase tracking-wider">Legal</h4>
+<ul class="space-y-base font-label-md text-label-md text-on-surface-variant">
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Terms of Service</a></li>
+<li><a class="hover:text-vibrant-purple transition-colors cursor-pointer" href="#">Sustainability Report</a></li>
+</ul>
+</div>
+</div>
+<div class="bg-sky-tint dark:bg-on-surface-variant h-[2px] w-full mb-stack-md"></div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter font-label-md text-label-md text-on-surface-variant">
+<div>© 2024 ThriftVibe. All rights reserved.</div>
+<div class="flex gap-stack-md">
+<a class="hover:text-vibrant-purple cursor-pointer transition-colors">Instagram</a>
+<a class="hover:text-vibrant-purple cursor-pointer transition-colors">TikTok</a>
+<a class="hover:text-vibrant-purple cursor-pointer transition-colors">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Header shadow on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('shadow-md');
+        }
+    });
+</script>
+</body></html>
