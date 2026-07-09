@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trending | ThriftVibe</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "sky-tint": "#DFF9FB",
+                    "on-primary-container": "#362d8a",
+                    "inverse-surface": "#2b3234",
+                    "surface-tint": "#5952af",
+                    "on-tertiary-container": "#264231",
+                    "outline-variant": "#c8c4d3",
+                    "on-primary-fixed": "#140067",
+                    "secondary-fixed": "#cee7e9",
+                    "primary": "#5952af",
+                    "surface-bright": "#f4fafd",
+                    "secondary-fixed-dim": "#b2cbcd",
+                    "pastel-lavender": "#C7C2FE",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#dde4e6",
+                    "primary-fixed": "#e3dfff",
+                    "on-error": "#ffffff",
+                    "vibrant-purple": "#A29BFE",
+                    "primary-fixed-dim": "#c5c0ff",
+                    "caution-yellow": "#FCE87B",
+                    "on-tertiary-fixed-variant": "#314d3c",
+                    "on-surface": "#161d1f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "surface-variant": "#dde4e6",
+                    "surface-dim": "#d4dbdd",
+                    "inverse-primary": "#c5c0ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#8fae99",
+                    "secondary-container": "#cbe4e7",
+                    "tertiary": "#486552",
+                    "primary-container": "#a29bfe",
+                    "surface-container": "#e8eff1",
+                    "on-secondary-fixed-variant": "#334b4d",
+                    "on-secondary-fixed": "#061f21",
+                    "on-secondary-container": "#4f6769",
+                    "secondary": "#4b6364",
+                    "on-background": "#161d1f",
+                    "surface": "#f4fafd",
+                    "on-surface-variant": "#474552",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "background": "#f4fafd",
+                    "outline": "#787583",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#eef5f7",
+                    "tertiary-fixed-dim": "#aeceb8",
+                    "on-tertiary": "#ffffff",
+                    "eco-mint": "#DAFBE3",
+                    "inverse-on-surface": "#ebf2f4",
+                    "on-primary-fixed-variant": "#413996",
+                    "tertiary-fixed": "#caead3",
+                    "on-tertiary-fixed": "#042012"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "container-margin": "24px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px",
+                    "gutter": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(223, 249, 251, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen smooth-scroll">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-on-background border-b-2 border-sky-tint dark:border-on-secondary-fixed-variant">
+<div class="flex justify-between items-center px-container-margin py-stack-sm max-w-7xl mx-auto">
+<div class="font-headline-lg text-headline-lg font-black text-vibrant-purple dark:text-pastel-lavender">ThriftVibe</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md hover:text-vibrant-purple transition-colors duration-200" href="/index.html">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md hover:text-vibrant-purple transition-colors duration-200" href="/catalog.html">Catalog</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md hover:text-vibrant-purple transition-colors duration-200" href="/eco-mission.html">Eco Mission</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary font-bold pb-1 transition-colors duration-200" href="/trending.html">Trending</a>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="hidden sm:flex items-center bg-sky-tint rounded-full px-4 py-1 border border-primary-container/20">
+<span class="material-symbols-outlined text-primary text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 lg:w-48 placeholder-on-secondary-container" placeholder="Cari harta karun..." type="text"/>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-primary hover:text-vibrant-purple transition-transform active:scale-95">shopping_cart</button>
+<button class="material-symbols-outlined text-primary hover:text-vibrant-purple transition-transform active:scale-95">account_circle</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-stack-lg">
+<!-- Hero Section -->
+<header class="px-container-margin max-w-7xl mx-auto mb-stack-lg relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-pastel-lavender/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+<div class="flex flex-col md:flex-row justify-between items-end gap-gutter">
+<div>
+<span class="inline-block bg-vibrant-purple text-on-primary text-label-md font-label-md px-3 py-1 rounded-full mb-4">MINGGU INI</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">Lagi Hits Pekan Ini</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                        Dapetin koleksi paling hot yang lagi diincer sejuta umat. Jangan sampe keduluan, thrift gems ini gak bakal dateng dua kali! 🔥
+                    </p>
+</div>
+<div class="flex gap-gutter">
+<div class="glass-card p-4 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-purple text-4xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div>
+<p class="text-xs uppercase font-bold text-outline">Active Users</p>
+<p class="font-headline-md text-primary">12.4K+</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Product Grid: Trending Gems -->
+<section class="px-container-margin max-w-7xl mx-auto mb-stack-lg">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Card 1: Hype! -->
+<div class="group flex flex-col bg-surface rounded-xl overflow-hidden border border-sky-tint transition-all duration-300 hover:border-vibrant-purple hover:bg-white">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A stylish vintage oversized varsity jacket displayed against a clean, light lavender background with soft high-key studio lighting. The jacket has intricate embroidery and a slightly faded patina that suggests its premium thrift origin. The overall aesthetic is minimalist, bright, and trendy, fitting a modern digital fashion marketplace with vibrant purple accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4Glk1guAWllZJihmU_JAztkWhEc7MgfFutJAxyi7MT3ix_xtkm7zXxDkLrHme4rM7rFwAdHBlbPFZmKEtGSWlCA_yygdUpDOuyTAWD-5yLobo00iPVU0FVCO4gi71i8gvGOPEoGgepqnKIRSZ9dsk8CoTHCFk71RkNSwqax26VM9dRvaH2cbMNuaObLy0k-8ITDxp8y5TnLyZEPisLY51EpjgtFwKhyQXJCod-6UTxuE-Kwmj6XN8Pj--1l6FFkstaKkgLnqG3M"/>
+<div class="absolute top-4 left-4 bg-caution-yellow text-on-surface font-label-md text-label-md px-3 py-1 rounded-lg shadow-sm">Hype!</div>
+<button class="absolute bottom-4 right-4 bg-white/80 backdrop-blur text-primary p-2 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-headline-md text-sm lg:text-base truncate">Vintage 90s Varsity Jacket</h3>
+<p class="text-vibrant-purple font-bold">Rp 450.000</p>
+<div class="flex items-center gap-2 mt-2">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-sky-tint overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a trendy young fashion enthusiast with colorful hair, set against a soft pastel lavender backdrop. The style is casual and energetic, with warm, natural sunlight casting soft shadows. The image quality is high-resolution with a focus on youthful, vibrant digital-first energy for a social shopping profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjeYbeiX3N0fNpZhKmyC8BMUx4TO3iGfrXwHH3a4bOztUlHS86szGe2fZy2ljIF92qytykl33lEKLSzucWcBky1DL56yi3iXvOen4BythJHRgehmytyZgwTArvXB8Gida10F6ecVWgyqhMUVC1hDCDMsgCEESTZYFM4_PgZwFHZ5LFxiNEpSnX-s_3PM_y26XjSdchgWz1nlUlGYX8oVaZnd8zwE1jwE7-iomnTM6F-oK5SmzEUcrH4eIKt3YioW-C-gt5dgbdCkM"/>
+</div>
+<span class="text-xs text-on-surface-variant">@vintagewarrior</span>
+</div>
+<button class="mt-stack-sm w-full py-2 bg-vibrant-purple text-on-primary font-label-md rounded-lg active:scale-95 transition-transform">Sikat Sekarang</button>
+</div>
+</div>
+<!-- Card 2: Rare Find -->
+<div class="group flex flex-col bg-surface rounded-xl overflow-hidden border border-sky-tint transition-all duration-300 hover:border-vibrant-purple hover:bg-white">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A pair of authentic 1980s retro sneakers with vibrant neon accents and visible wear that adds character. The shoes are staged on a minimalist white platform within a digital-first, airy studio setting. Soft daylight pours in from the side, highlighting the texture of the leather and suede. The background features subtle Sky-Tint and Pastel-Lavender tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMHDLQUhDxRjVwcs_neTh2qAAV6ww3F8ivRUZtNOL1lW4iBl6Z19LuEjJMwOVJmPjUgCRwVCb5F8CrNn2XJkBStuaikpTrSh7qrXyTadPdBmaKouwwXJqX6zbPNM8kjIN93UuaPhGVWLXGNzPfbAZBCrUk5hH25BirJ90GsqLh7K0WfviHv50RB1d7K1IIWMNm9E-kh0dg3xA_wddQhyi1LI4JmHs-Xx6uVE9lDOR7t4oRTe_vpCcX7U_vcYVWL1vCAMiGN62gc2A"/>
+<div class="absolute top-4 left-4 bg-pastel-lavender text-primary font-label-md text-label-md px-3 py-1 rounded-lg shadow-sm">Rare Find</div>
+<button class="absolute bottom-4 right-4 bg-white/80 backdrop-blur text-primary p-2 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-headline-md text-sm lg:text-base truncate">Classic 80s Retro Kicks</h3>
+<p class="text-vibrant-purple font-bold">Rp 1.200.000</p>
+<div class="flex items-center gap-2 mt-2">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-sky-tint overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylish young individual with a creative, urban look, featuring a unique thrifted accessory and a warm smile. The lighting is bright and high-key, creating a welcoming and optimistic mood. The background is a simple, modern white wall with hints of eco-mint green plants. A professional, clean aesthetic for a modern thrift brand user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3jCcyMk8IHaVDKKQi-jlHtHlBicB94zQT_nVvslXdmO_rQobV454TNNpfG8d2U44M6Jn2nNjoWbH5io5M8QSuVBeuEB-wPPy5y3HOpRpacCtypKNiIc7ddeChQrd1Iag6srnZnltWdzsnp-SZjT5Q4d5MYQQC1ttzijurS8ZtJUlOVsz-L9yh5hi0mwbGvFD6Xf-uFJMxCAdBSlOcORhcnXUR4Fv5cSN-wpaNOxyaVkGLp8hKK8WYPh3Z7vuK2a_VVeaKolx1ee4"/>
+</div>
+<span class="text-xs text-on-surface-variant">@hypebeast_id</span>
+</div>
+<button class="mt-stack-sm w-full py-2 bg-vibrant-purple text-on-primary font-label-md rounded-lg active:scale-95 transition-transform">Sikat Sekarang</button>
+</div>
+</div>
+<!-- Card 3: Eco Choice -->
+<div class="group flex flex-col bg-surface rounded-xl overflow-hidden border border-sky-tint transition-all duration-300 hover:border-vibrant-purple hover:bg-white">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A beautiful, handmade organic cotton knit sweater in a soft earth tone, draped over a wooden chair in a sun-drenched, minimalist living room. The setting is bright and airy, with many green indoor plants in the background to emphasize sustainability. The lighting is soft and natural, creating a serene and premium eco-conscious vibe with high-end digital clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs2mP0U2ozlexVFnRh7Wu6ljQl0W70VtyrvSeOuCQnZw7sx5Rlg8NYhxgN6QAO4XqCQrzjL27uCtr3hDhlUfBguZMcuwcIaTOwX5pVvYZnela5hAzzYcL_k5GioJAiu1KuUZzTjo5pk01DhiJh0zdF-_JVkmGBwlj09jgQvNClvRFccmd0V65oafGarxALvuDNRjulTOA_v-bz9jS0JD5oCUbU_q5UVLhrw1FtHZ32pHCaTDeN6bJy3yS2ClxupC_slzOQcd5iiuQ"/>
+<div class="absolute top-4 left-4 bg-eco-mint text-tertiary font-label-md text-label-md px-3 py-1 rounded-lg shadow-sm">Eco Choice</div>
+<button class="absolute bottom-4 right-4 bg-white/80 backdrop-blur text-primary p-2 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-headline-md text-sm lg:text-base truncate">Handmade Organic Knitwear</h3>
+<p class="text-vibrant-purple font-bold">Rp 325.000</p>
+<div class="flex items-center gap-2 mt-2">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-sky-tint overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A friendly, eco-conscious woman with a minimalist aesthetic, wearing natural fibers and looking directly at the camera with a gentle expression. The background is a soft, out-of-focus garden bathed in warm morning light. The image embodies optimistic sustainability and a premium, clean digital aesthetic for a modern thrift community profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIsPloxegdssg3La6bDGmol47HJjwRXgPRHLPoZ-og9Z8Mav_tt5qBM_N4auCCi4lg_mB3EFrrzOUY18rMquSCDV2BBnEoEFfUnqn5sh_B6NrGd028QaOFmR7_kbc5cdTpmhw5jyKSrOoRs83whk8LmD1VolNIK_kT6ulbtbrXm-ZOolP-7FKt9xtsQM7nI6mh5DSS1E2BHV774Td-1YYQaNXAlNs0d-STz4qG8l6NgktSD0LGNMoAklZvcKXAFaNdVK8tKJuC1-k"/>
+</div>
+<span class="text-xs text-on-surface-variant">@greenstyle</span>
+</div>
+<button class="mt-stack-sm w-full py-2 bg-vibrant-purple text-on-primary font-label-md rounded-lg active:scale-95 transition-transform">Sikat Sekarang</button>
+</div>
+</div>
+<!-- Card 4: Hype! -->
+<div class="group flex flex-col bg-surface rounded-xl overflow-hidden border border-sky-tint transition-all duration-300 hover:border-vibrant-purple hover:bg-white">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A pair of well-preserved vintage high-waisted denim jeans with a classic light wash, styled with a trendy leather belt. The jeans are displayed in a bright, modern studio with high-contrast, clean lines. The atmosphere is energetic and fashionable, using a palette of crisp whites and vibrant purples to guide the eye. High-resolution digital fashion product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd7-98X_qqiMm5wBkjE9g_8pJq4p9DsRV0WGwJ6vw7i1Pgcx48DyWvYqXWcQcqL-cyDAIVyortdI7Dlo6aW_jQ0QVByzfkCfqLIIRqIigehVUoAFu1k1SVi_bytVCBxtR3xV4tj-x5-ODWQMdzCrlTJL3459fJUNhGbp55T6E0anYpWA3D6WaJ32yHEN7suQ4ogSi2X5WJK_PqLI5dJQhNQqgOVa0jO_vN4Q-jwWz1WaTP8jg4NeSxRTxRGzepJT5MzLIhQUPFeOo"/>
+<div class="absolute top-4 left-4 bg-caution-yellow text-on-surface font-label-md text-label-md px-3 py-1 rounded-lg shadow-sm">Hype!</div>
+<button class="absolute bottom-4 right-4 bg-white/80 backdrop-blur text-primary p-2 rounded-full hover:bg-vibrant-purple hover:text-white transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<h3 class="font-headline-md text-sm lg:text-base truncate">90s Levi's Custom Fit</h3>
+<p class="text-vibrant-purple font-bold">Rp 580.000</p>
+<div class="flex items-center gap-2 mt-2">
+<div class="w-6 h-6 rounded-full bg-surface-container border border-sky-tint overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cool, confident young man with a street-style fashion sense, wearing high-contrast black and white clothing. He is posed in a brightly lit urban setting with clean architectural lines. The image has a crisp, high-end feel that communicates premium secondhand fashion and social shopping energy in a modern digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhVZM6PqmwEnbc4CoyDpVDXaxJJ4S8PiQW_16EyjmvjQtSivworwxjiC6zblCtcCFWmbPFfUHCEfXu1AhU50P7OsnhnSwVrdYXhbg-AXoAly08Oj72EUD-sfc4kO0FNDSF8Lz_ciMoyS5BMQeMLMQDzLihnpKUeoT0hkWOne0K-dM0X87lmdQrDpSaIwFcexsbnKAhP1mY38lYlIsC5KukYvQP77uBiPcWv9Pg4h4htYi2ukXrLL5-tapSbvJY_79HLqJ0XcC7qiI"/>
+</div>
+<span class="text-xs text-on-surface-variant">@denimguy</span>
+</div>
+<button class="mt-stack-sm w-full py-2 bg-vibrant-purple text-on-primary font-label-md rounded-lg active:scale-95 transition-transform">Sikat Sekarang</button>
+</div>
+</div>
+</div>
+</section>
+<!-- OOTD Inspirasi Section -->
+<section class="bg-sky-tint/50 py-stack-lg">
+<div class="px-container-margin max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center mb-stack-md gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">OOTD Inspirasi</h2>
+<p class="text-body-md text-on-surface-variant">Cek gaya keren Vibe-Mates kita pake barang thrift!</p>
+</div>
+<button class="bg-white border-2 border-vibrant-purple text-vibrant-purple px-6 py-2 rounded-full font-label-md hover:bg-vibrant-purple hover:text-white transition-all">Submit OOTD-mu</button>
+</div>
+<!-- Asymmetric Bento-like Grid for OOTD -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter h-auto lg:h-[600px]">
+<div class="relative overflow-hidden rounded-2xl md:col-span-2 md:row-span-2 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A full-length fashion shot of a young woman posing on a colorful city street, wearing a curated outfit of mixed thrifted patterns and textures. The lighting is vibrant and sunny, emphasizing the energetic and expressive style of the brand. The color palette is bright and welcoming, featuring lavender and eco-mint accents in the urban background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQJtN9b_vT_-rDLKcr69_wWnP_7qsj4yPYOvCVPU9UXZRAXGuFwBmeq3t0SI360PGR1VHUiy93peJfG-gu0g988baq4P4wOm1jwvtjqa4ULXygPNc-0JvnVTbjTYkkCsdKPNrnn12ecgg6IF21szR9fCk3uKpFDXpu_9EvNuz3dGtPQCqipWtsMpSrux7zEQw8WVL-kzN9OgMOS-rKakrBIr0P7Ke6K3sn9IRWhxjODekaHRzyYvZsK38hAascDTUa3HgcVo7v9sk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<p class="text-white font-bold">"Retro Grunge Mix"</p>
+<p class="text-sky-tint text-sm">pake @vibe_official blazer</p>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-2xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up aesthetic shot of a trendy thrifted outfit including a graphic tee and oversized sunglasses, set in a bright, sun-filled cafe with modern decor. The lighting is soft and golden, highlighting the details and textures of the fabric. The overall mood is casual, bestie-vibes, and high-energy social-shopping aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1khHCK6YaL-nZH0jiQflp25rFyhqV5T0e2PMSrNJAxG1waxr4SgZ-ihrHs3QI5LOmti5Q2na2jScPAHMYE6qjJtcJJp5BvlLbbVHCdg8-DWnZ8lTeXAJXXsudxK5ssrySJu7EbThRznqdlMWHWSmjNEkPGEDFlxunjKuS_PhjcvEQvBBqIQ5gHXNMrPEtcoWv_cv77oZ8wVFNpeKiv47YKOUyqA6WAQCm25iI0XgQ41kRdx1dSD3EsGDdPkeXhIdpxaj9HDu1IRs"/>
+<div class="absolute top-3 right-3 bg-white/20 backdrop-blur rounded-full p-1">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-2xl group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dynamic action shot of someone walking through a park wearing a flowy, vintage bohemian dress. The image is captured with a high shutter speed to freeze the motion of the fabric. The setting is bright and airy with lots of greenery, perfectly representing the eco-conscious and optimistic mood of the ThriftVibe brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB735--MTf5ty97u-NnSUdjF4jrLxOvc7Dkww920YA-wmywySWYM61BKmDwJD1VaaDp-A9z1qlxdK2Fy-IJX7bq4f4soFQhgXwQaEWooEQm8YGD8ptCQxniDshRSbxnJhW8CX10TInohWmZPUyK13hGjEJB82XkeNDmYQ2OIrIfao0GC0Pqj5Wrb8NOhCUmgh1zQdcJFnm1KinZGXCHpF8C4mCOxpDDQHUDML01bAMwysD9Lz7O4BhlixZS2yCa3Pzo5mZANZUcJes"/>
+</div>
+<div class="relative overflow-hidden rounded-2xl md:col-span-2 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A flat-lay fashion arrangement of several thrifted pieces including a denim jacket, a bucket hat, and chunky sneakers, laid out on a clean white surface with artistic shadows. The composition is crisp and organized, following a Flat 2.0 design aesthetic with vibrant purple and sky-tint background elements. Modern, energetic fashion photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2X0vdjXsKD4MUwBQRa-HGe3zSby05blSI_T1SlCabseo_wsjZuKUsgKOOeyuRyV-iZqElwPoZHJmTolOCLgQyVY4E28v2j7LmwPlO3u-dDZ4g6NtszWHLJpDWcQ8NGwjK7CVzflqoHc92fZHJyByy_fA_iZN48G37Ry6fu4m_NQK56WYCM1gEo_fJlOZcX72D-4r31lIOeEd11YNTFd8FVImac08Pj9Lcr0uS4efVJl10z9BNK66OcGClZIUJ-IBoilgodQiRlz4"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-white/90 backdrop-blur px-6 py-3 rounded-full text-primary font-bold">Shop the Look</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Keywords -->
+<section class="px-container-margin max-w-7xl mx-auto mt-stack-lg">
+<h3 class="font-headline-md text-on-surface mb-gutter">Paling Banyak Dicari</h3>
+<div class="flex flex-wrap gap-stack-sm">
+<span class="px-4 py-2 bg-surface border border-sky-tint rounded-full text-body-md text-primary hover:bg-pastel-lavender transition-colors cursor-pointer">#Y2KAesthetic</span>
+<span class="px-4 py-2 bg-surface border border-sky-tint rounded-full text-body-md text-primary hover:bg-pastel-lavender transition-colors cursor-pointer">#BlokeCore</span>
+<span class="px-4 py-2 bg-surface border border-sky-tint rounded-full text-body-md text-primary hover:bg-pastel-lavender transition-colors cursor-pointer">#EarthToneVibes</span>
+<span class="px-4 py-2 bg-surface border border-sky-tint rounded-full text-body-md text-primary hover:bg-pastel-lavender transition-colors cursor-pointer">#BaggyJeans</span>
+<span class="px-4 py-2 bg-surface border border-sky-tint rounded-full text-body-md text-primary hover:bg-pastel-lavender transition-colors cursor-pointer">#VintageNike</span>
+<span class="px-4 py-2 bg-surface border border-sky-tint rounded-full text-body-md text-primary hover:bg-pastel-lavender transition-colors cursor-pointer">#EcoFriendlyFabric</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-sky-tint dark:bg-on-secondary-fixed">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center px-container-margin py-stack-lg gap-gutter max-w-7xl mx-auto">
+<div class="flex flex-col gap-2">
+<div class="font-headline-md text-headline-md text-vibrant-purple">ThriftVibe</div>
+<p class="text-body-md text-on-secondary-container dark:text-secondary-fixed font-body-md max-w-xs">
+                    © 2024 ThriftVibe. Circular fashion for a vibrant planet.
+                </p>
+</div>
+<div class="flex flex-wrap gap-gutter md:gap-stack-lg">
+<a class="text-on-secondary-container dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed underline decoration-2 transition-all duration-300" href="#">Sustainability Report</a>
+<a class="text-on-secondary-container dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed underline decoration-2 transition-all duration-300" href="#">Our Story</a>
+<a class="text-on-secondary-container dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed underline decoration-2 transition-all duration-300" href="#">Newsletter Signup</a>
+<a class="text-on-secondary-container dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed underline decoration-2 transition-all duration-300" href="#">Help Center</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant-purple hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant-purple hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for adding small particle effects or GSAP animations
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-vibrant-purple');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-vibrant-purple');
+        });
+    </script>
+</body></html>
